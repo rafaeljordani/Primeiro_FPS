@@ -4,6 +4,7 @@ public class AtirarCreater : MonoBehaviour
 {
 
     public GameObject BalaPrefab,localBala;
+    public float VelBala;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,7 +23,7 @@ public class AtirarCreater : MonoBehaviour
     {
 
         GameObject Bala = Instantiate(BalaPrefab, localBala.transform.position,Quaternion.identity);
-
-        //Bala.GetComponent<Rigidbody>().position// eu nao sei KRLLLLLLLLLLLL
+        Bala.GetComponent<Rigidbody>().AddForce(transform.forward * VelBala, ForceMode.Impulse);
+        
     }
 }

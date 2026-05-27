@@ -15,7 +15,7 @@ public class PlayerMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovDirection = new Vector3(Input.GetAxisRaw("Horizontal"),Rigidbody.linearVelocity.y, Input.GetAxisRaw("Vertical"));
+        MovDirection = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
         jump();
         
     }
@@ -23,13 +23,13 @@ public class PlayerMov : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody.linearVelocity = new Vector3(MovDirection.x * speed, Rigidbody.linearVelocity.y, MovDirection.z * speed);
+        Rigidbody.linearVelocity = new Vector3(MovDirection.x * speed,0, MovDirection.z * speed);
     }
 
 
     public void jump()
     {
-        if((Input.GetKeyDown(KeyCode.Escape)) && (ChaoTa == true))
+        if((Input.GetKeyDown(KeyCode.Space)) && (ChaoTa == true))
         {
             Rigidbody.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
         }
