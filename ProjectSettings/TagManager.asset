@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Chao
+  - Bullet
+  - Inimigo
   layers:
   - Default
   - TransparentFX
