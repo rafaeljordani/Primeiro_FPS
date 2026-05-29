@@ -20,6 +20,11 @@ public class BalaMain : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-        } 
+        }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("AIIIIIII DOEU");
+        }
+
     }
 }
