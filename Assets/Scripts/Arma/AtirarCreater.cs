@@ -22,7 +22,7 @@ public class AtirarCreater : MonoBehaviour
     public void SpawnersBala()
     {
 
-        GameObject Bala = Instantiate(BalaPrefab, localBala.transform.position, Quaternion.Euler(0,0,0));
+        GameObject Bala = Instantiate(BalaPrefab, localBala.transform.position, Camera.main.transform.rotation);
         Bala.GetComponent<Rigidbody>().AddForce(transform.forward * VelBala, ForceMode.Impulse);
         
     }
