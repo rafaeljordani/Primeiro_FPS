@@ -10,6 +10,7 @@ public class AtirarCreater : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        InvokeRepeating("SpawnersBala", 5f, 5f);
         
     }
 
@@ -21,9 +22,10 @@ public class AtirarCreater : MonoBehaviour
 
     public void SpawnersBala()
     {
-
+        
         GameObject Bala = Instantiate(BalaPrefab, localBala.transform.position, Camera.main.transform.rotation);
         Bala.GetComponent<Rigidbody>().AddForce(transform.forward * VelBala, ForceMode.Impulse);
+        Destroy(Bala,5f);
         
     }
 }

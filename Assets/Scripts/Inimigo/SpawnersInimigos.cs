@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class SpawnersInimigos : MonoBehaviour
 {
+    public GameObject spawner,inimigo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        InvokeRepeating("spawnInimgio", 2f, 1f);
     }
 
     // Update is called once per frame
@@ -16,6 +17,7 @@ public class SpawnersInimigos : MonoBehaviour
 
     public void spawnInimgio()
     {
-        //Instantiate<>
+        GameObject inimigo_ = Instantiate(inimigo, spawner.transform.position, Quaternion.identity);
     }
+
 }
