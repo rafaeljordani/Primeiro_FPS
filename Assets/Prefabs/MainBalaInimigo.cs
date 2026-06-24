@@ -1,27 +1,26 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Video;
 
-public class BalaMain : MonoBehaviour
+public class MainBalaInimigo : MonoBehaviour
 {
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Inimigo"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-            Debug.Log("Inimigo atingido!");
+            Debug.Log("Player atingido!");
+            collision.gameObject.GetComponent<PlayerInteracao>().Vida -= 10;
         }
-
     }
 }

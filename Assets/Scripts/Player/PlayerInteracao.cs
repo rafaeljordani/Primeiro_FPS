@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,13 +6,15 @@ public class PlayerInteracao : MonoBehaviour
 {
     public float distanciaInteracao = 2f;
     public LayerMask InteracaoArmaAWP;
-    public GameObject CameraVision;
+    public GameObject CameraVision, refereciaParaTirarAVida;
+    public int Vida = 100;
+    public TextMeshProUGUI vidaText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        vidaText.text = "Vida: " + Vida.ToString();
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class PlayerInteracao : MonoBehaviour
                 Debug.Log("Capotemo o corsa");
             }
         }
+        TirarVida();
     }
 
         //InteracaoArmaAWP
@@ -42,6 +46,9 @@ public class PlayerInteracao : MonoBehaviour
         Gizmos.DrawRay(CameraVision.transform.position, CameraVision.transform.forward * distanciaInteracao);
     }
 
-
+    public void TirarVida()
+    {
+            vidaText.text = "Vida: " + Vida.ToString();
+    }
 }
 

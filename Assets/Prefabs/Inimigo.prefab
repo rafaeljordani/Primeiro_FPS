@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78461d19902f2ff4e9de07a45d44e235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InimigoAtira
-  BalaPrefab: {fileID: 4840623267421416679, guid: d08e0dd815cd65b4ea3fb18523864cf2, type: 3}
+  BalaPrefab: {fileID: 4840623267421416679, guid: 1eeb8b9b53058124492ca9cdda90c0a6, type: 3}
   localBala: {fileID: 2827795196624995632}
   VelBala: 50
   TempoMax: 5
@@ -80,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 7736994964492674149}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.254974, y: 1.3580117, z: 290.9699}
+  m_LocalPosition: {x: -15.254974, y: 0.076, z: 290.9699}
   m_LocalScale: {x: 0.72, y: 2, z: 0.48}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -226,8 +226,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.99999994, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3768249, y: 1, z: 2.0211556}
+  m_Center: {x: 0.0059829815, y: 0, z: -0.06555009}
 --- !u!1001 &3204050324373060814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab867c2927cead14eb8fe3388f478ce1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.286
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab867c2927cead14eb8fe3388f478ce1, type: 3}
       propertyPath: m_LocalPosition.z
