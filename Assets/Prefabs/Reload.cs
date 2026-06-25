@@ -6,7 +6,9 @@ public class Reload : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Cursor.visible = true;
+
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -18,6 +20,6 @@ public class Reload : MonoBehaviour
     public void ReloadWeapon()
     {
         Debug.Log("Reloading weapon...");
-         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         SceneManager.LoadScene("SampleScene");
     }
 }

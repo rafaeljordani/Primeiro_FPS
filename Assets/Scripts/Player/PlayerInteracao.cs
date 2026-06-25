@@ -1,20 +1,22 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteracao : MonoBehaviour
 {
     public float distanciaInteracao = 2f;
     public LayerMask InteracaoArmaAWP;
     public GameObject CameraVision, refereciaParaTirarAVida;
-    public int Vida = 100;
-    public TextMeshProUGUI vidaText;
+    public int Vida = 100, Pontuacao;
+    public TextMeshProUGUI vidaText, PontuacaoText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         vidaText.text = "Vida: " + Vida.ToString();
+        PontuacaoText.text = "Pontuação: " + Pontuacao.ToString();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class PlayerInteracao : MonoBehaviour
             }
         }
         TirarVida();
+        AdicionarPontuacao();
     }
 
         //InteracaoArmaAWP
@@ -49,6 +52,19 @@ public class PlayerInteracao : MonoBehaviour
     public void TirarVida()
     {
             vidaText.text = "Vida: " + Vida.ToString();
+        if(Vida <= 0)
+        {
+            SceneManager.LoadScene("Reload");
+        }
+    }
+
+    public void AdicionarPontuacao()
+    {
+        PontuacaoText.text = "Pontuação: " + Pontuacao.ToString();
+        if(Pontuacao >= 500)
+        {
+            SceneManager.LoadScene("Vitoria");
+        }
     }
 }
 
