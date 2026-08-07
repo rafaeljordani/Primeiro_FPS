@@ -46,7 +46,6 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("Chao"))
         {
             ChaoTa = true;
-            Debug.Log("Ola mundo");
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -54,7 +53,6 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("Chao"))
         {
             ChaoTa = false;
-            Debug.Log("Ola mundo");
         }
     }
 

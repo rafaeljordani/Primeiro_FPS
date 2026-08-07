@@ -17,12 +17,18 @@ public class BalaMain : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.CompareTag("Inimigo"))
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             Debug.Log("Inimigo atingido!");
             Player.GetComponent<PlayerInteracao>().Pontuacao += 10;
+        }
+        else if ((collision.gameObject.CompareTag("Chao")) || (collision.gameObject.CompareTag("Parede")))
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Bala atingiu o chão ou parede!");
         }
 
     }
