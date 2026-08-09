@@ -3,21 +3,9 @@ using UnityEngine;
 
 public class AtirarCreater : MonoBehaviour
 {
-
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-
     public void createRastroTiro(GameObject prefbTiro, Vector3 PontoIncial, Vector3 pontoFinal)
     {
         GameObject rastroObjeto = Instantiate(prefbTiro, PontoIncial, Quaternion.identity);
-        Debug.Log("Entrou na funcao crateRastro");
 
         // Pega o componente de linha dele
         LineRenderer linha = FindAnyObjectByType<LineRenderer>();
