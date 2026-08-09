@@ -3,43 +3,56 @@ using UnityEngine;
 
 public class PlayerMov : MonoBehaviour
 {
-    public float speed, jumpforce;
-    public Rigidbody Rigidbody;
-    public Vector3 MovDirection, MouseDir;
+    public float walkSpeed = 3f;
+    public float runSpeed = 5f;
+    public float jumpforce = 3f;
+    public Rigidbody rb;
     public bool ChaoTa;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        
+        rb = GetComponent<Rigidbody>();
     }
-
     // Update is called once per frame
     void Update()
     {
-
-        MouseDir.x += Input.GetAxis("Mouse X");
-
-        this.transform.localRotation = Quaternion.Euler(0, MouseDir.x, 0);
-        MovDirection = new Vector3(Input.GetAxisRaw("Horizontal"),Rigidbody.linearVelocity.y, Input.GetAxisRaw("Vertical"));
-        MovDirection = transform.TransformDirection(MovDirection);
-        jump();
-        
+        movPlayer();
     }
 
 
-    private void FixedUpdate()
+    public void movPlayer()
     {
-        Rigidbody.linearVelocity = new Vector3(MovDirection.x * speed, Rigidbody.linearVelocity.y, MovDirection.z * speed);
+        walk();
+        jump();
     }
 
+    public void walk()
+    {
+        //Aqui um ternario para setar a velocidade que sera usada, se sera a de correr ou a de andar normal 
+        float setSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+
+        //Pega o input de andar do player 
+        Vector3 MovDirection = new Vector3(Input.GetAxisRaw("Horizontal"), rb.linearVelocity.y, Input.GetAxisRaw("Vertical"));
+        //adiciona esse input direciado a onde o player esta olhando
+        MovDirection = transform.TransformDirection(MovDirection);
+        //adiciona o speed na mov
+        MovDirection = MovDirection * setSpeed;
+        //aqui ele anda sem alterar o eixo Y 
+        rb.linearVelocity = new Vector3(MovDirection.x, rb.linearVelocity.y, MovDirection.z);
+
+    }
 
     public void jump()
     {
-        if((Input.GetKeyDown(KeyCode.Space)) && (ChaoTa == true))
+        if (Input.GetKeyDown(KeyCode.Space) && (ChaoTa == true))
         {
-            Rigidbody.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
         }
+    }
+
+    public void squat()
+    {
+
     }
     private void OnCollisionEnter(Collision collision)
     {

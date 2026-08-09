@@ -16,7 +16,7 @@ public class PlayerInteracao : MonoBehaviour
     void Start()
     {
         vidaText.text = "Vida: " + Vida.ToString();
-        PontuacaoText.text = "Pontuação: " + Pontuacao.ToString();
+        PontuacaoText.text = "Pontuaï¿½ï¿½o: " + Pontuacao.ToString();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class PlayerInteracao : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
-            if (Physics.Raycast(CameraVision.transform.position, CameraVision.transform.forward,out hit, distanciaInteracao, InteracaoArmaAWP))
+            if (Physics.Raycast(CameraVision.transform.position, CameraVision.transform.forward, out hit, distanciaInteracao, InteracaoArmaAWP))
             {
                 Debug.Log("interagio com o " + hit.collider.gameObject.name);
                 InteracaoPai interacao = hit.collider.gameObject.GetComponent<InteracaoPai>();
@@ -41,9 +41,9 @@ public class PlayerInteracao : MonoBehaviour
         AdicionarPontuacao();
     }
 
-        //InteracaoArmaAWP
+    //InteracaoArmaAWP
 
-        private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(CameraVision.transform.position, CameraVision.transform.forward * distanciaInteracao);
@@ -51,8 +51,8 @@ public class PlayerInteracao : MonoBehaviour
 
     public void TirarVida()
     {
-            vidaText.text = "Vida: " + Vida.ToString();
-        if(Vida <= 0)
+        vidaText.text = "Vida: " + Vida.ToString();
+        if (Vida <= 0)
         {
             SceneManager.LoadScene("Reload");
         }
@@ -60,8 +60,8 @@ public class PlayerInteracao : MonoBehaviour
 
     public void AdicionarPontuacao()
     {
-        PontuacaoText.text = "Pontuação: " + Pontuacao.ToString();
-        if(Pontuacao >= 500)
+        PontuacaoText.text = "Pontuaï¿½ï¿½o: " + Pontuacao.ToString();
+        if (Pontuacao >= 500)
         {
             SceneManager.LoadScene("Vitoria");
         }

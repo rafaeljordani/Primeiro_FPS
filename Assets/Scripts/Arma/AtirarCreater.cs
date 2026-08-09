@@ -9,7 +9,7 @@ public class AtirarCreater : MonoBehaviour
     public GameObject PrefabsRatroTiro;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {       
+    {
     }
 
     // Update is called once per frame
@@ -30,14 +30,14 @@ public class AtirarCreater : MonoBehaviour
         else
         {
             pontoFinal = cam.transform.position + cam.transform.forward * alcance;
-            Debug.Log("Não acertou nenhum objeto");
+            Debug.Log("Nï¿½o acertou nenhum objeto");
         }
 
         createRastroTiro(pontaDaArma.position, pontoFinal);
     }
 
 
-    public void createRastroTiro( Vector3 PontoIncial, Vector3 pontoFinal)
+    public void createRastroTiro(Vector3 PontoIncial, Vector3 pontoFinal)
     {
         GameObject rastroObjeto = Instantiate(PrefabsRatroTiro, PontoIncial, Quaternion.identity);
 
@@ -51,7 +51,7 @@ public class AtirarCreater : MonoBehaviour
             linha.SetPosition(1, pontoFinal);
         }
 
-        // Destrói o rastro após 0.1 segundos para não encher o jogo de lixo
+        // Destrï¿½i o rastro apï¿½s 0.1 segundos para nï¿½o encher o jogo de lixo
         Destroy(rastroObjeto, 0.1f);
     }
 }
