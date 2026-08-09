@@ -12,7 +12,7 @@ public class BalaMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,10 +25,10 @@ public class BalaMain : MonoBehaviour
             Debug.Log("Inimigo atingido!");
             Player.GetComponent<PlayerInteracao>().Pontuacao += 10;
         }
-        else if ((collision.gameObject.CompareTag("Chao")) || (collision.gameObject.CompareTag("Parede")))
+        else if (collision.gameObject.CompareTag("Chao") || collision.gameObject.CompareTag("Parede"))
         {
             Destroy(this.gameObject);
-            Debug.Log("Bala atingiu o chão ou parede!");
+            Debug.Log("Bala atingiu o chï¿½o ou parede!");
         }
 
     }

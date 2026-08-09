@@ -513,7 +513,6 @@ GameObject:
   - component: {fileID: 362531653}
   - component: {fileID: 362531657}
   - component: {fileID: 362531656}
-  - component: {fileID: 362531655}
   m_Layer: 0
   m_Name: Arma
   m_TagString: Untagged
@@ -537,27 +536,6 @@ Transform:
   - {fileID: 188578008}
   m_Father: {fileID: 1033838676}
   m_LocalEulerAnglesHint: {x: 0, y: 83.47, z: -4.33}
---- !u!65 &362531655
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362531652}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &362531656
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -629,7 +607,7 @@ GameObject:
   - component: {fileID: 385501633}
   m_Layer: 0
   m_Name: visual
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1091,6 +1069,7 @@ GameObject:
   - component: {fileID: 707126895}
   - component: {fileID: 707126896}
   - component: {fileID: 707126897}
+  - component: {fileID: 707126898}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1159,6 +1138,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &707126898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707126891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcad125205bd4edaa9a3d9c963ab357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TesteDeTiro
+  player: {fileID: 707126891}
+  prefbTiro: {fileID: 0}
+  spawnar: {fileID: 188578008}
+  fireRateTeste: 0
+  nextFireTime: 0
 --- !u!1 &865845742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,7 +1422,6 @@ GameObject:
   - component: {fileID: 1033838674}
   - component: {fileID: 1033838673}
   - component: {fileID: 1033838672}
-  - component: {fileID: 1033838677}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1568,22 +1563,6 @@ Transform:
   - {fileID: 362531653}
   m_Father: {fileID: 707126895}
   m_LocalEulerAnglesHint: {x: 34.321, y: 0, z: 0}
---- !u!114 &1033838677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033838671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a4031832a68ec4baef2eb08c7ee545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtirarCreater
-  alcance: 100
-  cam: {fileID: 1033838675}
-  pontaDaArma: {fileID: 188578008}
-  PrefabsRatroTiro: {fileID: 243972400588834365, guid: 25d80f40387a2bd4fba126b92b715f3a, type: 3}
 --- !u!1 &1316078419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1675,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316078419}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1373367822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373367825}
+  - component: {fileID: 1373367824}
+  - component: {fileID: 1373367823}
+  m_Layer: 0
+  m_Name: referencias
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1373367823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373367822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43d28dc0aa834c3192922e7a3d2a143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::teste11
+--- !u!114 &1373367824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373367822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041e860e127a344b2941c85a1631240f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RayCast
+--- !u!4 &1373367825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373367822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.69147, y: 0, z: -1.95361}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490373445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,3 +1878,4 @@ SceneRoots:
   - {fileID: 865845746}
   - {fileID: 393540185}
   - {fileID: 707126895}
+  - {fileID: 1373367825}
