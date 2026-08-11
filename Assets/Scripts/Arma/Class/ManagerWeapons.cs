@@ -6,9 +6,7 @@ using UnityEditor;
 public class ManagerWeapons : MonoBehaviour
 {
     //Referencias armas
-    public Rifle rifle;
-    public Pistol pistol;
-    public knive knive;
+    public LoadedWeapons sla;
 
     //Referencias Raycast
     public GameObject player;
@@ -18,34 +16,26 @@ public class ManagerWeapons : MonoBehaviour
 
 
     //Referencia dicioario
-    public Dictionary<int, dynamic> weapons;
+    public Dictionary<int, LoadedWeaponsData> weapons;
 
-    public Rifle armaAtualTypRifle;
-    public Rifle armaAtualTypPistol;
-    public Rifle armaAtualTypKnive;
-
-    public dynamic armaAtual;
+    public LoadedWeaponsData armaAtual;
 
     public bool weaponEquipped = true;
 
     void Awake()
     {
 
-        weapons = new Dictionary<int, dynamic>
+        weapons = new Dictionary<int, LoadedWeaponsData>
         {
-            {1, rifle.ak47 },
-            {2, pistol.desertEagle},
-            {3,knive.butterFly},
-            {4, rifle.m4a1}
+            {1, sla.ak47},
+            {2, sla.desertEagle},
+            {3, sla.butterFly},
+            {4, sla.m4a1}
 
         };
 
-        armaAtual = weapons[1];
+        armaAtual = weapons[4];
 
-        // por conta de uso de class eu preciei na class pai fazer um tipo de arma para poder pegar o valor de quanto teria de municao e de magazine
-        // rifle = 1
-        // pistol = 2
-        // knive = 3
     }
     void Update()
     {
