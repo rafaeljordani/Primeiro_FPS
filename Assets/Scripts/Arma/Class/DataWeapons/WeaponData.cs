@@ -13,16 +13,17 @@ public class WeaponsData
     public int damage;
     public float range;
     public float fireRate;
+    public int typeWeapon;
 
 
-    public WeaponsData(int id, string name, int damage, float range, float fireRate)
+    public WeaponsData(int id, string name, int damage, float range, float fireRate, int typeWeapon)
     {
         this.id = id;
         this.name = name;
         this.damage = damage;
         this.range = range;
         this.fireRate = fireRate;
-
+        this.typeWeapon = typeWeapon;
     }
 
     public virtual void fire(AtirarCreater atirarCreater, GameObject player, GameObject prefbTiro, Transform creatPoint)

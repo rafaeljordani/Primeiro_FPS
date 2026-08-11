@@ -14,8 +14,8 @@ public class LoadedWeaponsData : WeaponsData
 
     public int magSize;
 
-    public LoadedWeaponsData(int id, string name, int damage, float range, float fireRate, int ammunition, int magSize)
-    : base(id, name, damage, range, fireRate)
+    public LoadedWeaponsData(int id, string name, int damage, float range, float fireRate, int typeWeapon, int ammunition, int magSize)
+    : base(id, name, damage, range, fireRate, typeWeapon)
     {
         this.ammunition = ammunition;
         this.magSize = magSize;
