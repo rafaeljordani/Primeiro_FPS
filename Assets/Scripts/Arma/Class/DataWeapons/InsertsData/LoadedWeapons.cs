@@ -16,7 +16,7 @@ public class LoadedWeapons : MonoBehaviour
             100f,
             0.4f,
             1,
-            35,
+            350,
             35
         );
         m4a1 = new LoadedWeaponsData(
@@ -24,10 +24,10 @@ public class LoadedWeapons : MonoBehaviour
            "M4A1",
            30,
            100f,
-           0.3f,
+           0.1f,
            1,
-           30,
-           5000
+           350,
+           35
        );
         desertEagle = new LoadedWeaponsData(
             3,
@@ -36,7 +36,7 @@ public class LoadedWeapons : MonoBehaviour
             100f,
             0.8f,
             2,
-            8,
+            100,
             8
         );
 

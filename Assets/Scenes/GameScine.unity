@@ -809,50 +809,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &398924826
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 398924828}
-  - component: {fileID: 398924827}
-  m_Layer: 0
-  m_Name: LoadedWeapons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &398924827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398924826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853acd24e83f2410fa242d79cb3a4900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoadedWeapons
---- !u!4 &398924828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398924826}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.86528, y: -0, z: 5.59926}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561449636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1680,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1373367825}
   - component: {fileID: 1373367826}
+  - component: {fileID: 1373367827}
+  - component: {fileID: 1373367828}
   m_Layer: 0
   m_Name: referencias
   m_TagString: Untagged
@@ -1758,12 +1716,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337e0910ff0f347ee8b90cee15574122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManagerWeapons
-  sla: {fileID: 398924827}
+  sla: {fileID: 1373367827}
+--- !u!114 &1373367827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373367822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853acd24e83f2410fa242d79cb3a4900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadedWeapons
+--- !u!114 &1373367828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373367822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964818cbadf1b3b4c990ec18ec53a229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManegeMag
   player: {fileID: 707126891}
   prefbTiro: {fileID: 243972400588834365, guid: 25d80f40387a2bd4fba126b92b715f3a, type: 3}
   creatPoint: {fileID: 188578008}
   atirarCreater: {fileID: 1714996913}
-  weaponEquipped: 1
+  ammunition: 0
+  magSize: 0
 --- !u!1 &1490373445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,4 +1939,3 @@ SceneRoots:
   - {fileID: 707126895}
   - {fileID: 1373367825}
   - {fileID: 1714996914}
-  - {fileID: 398924828}

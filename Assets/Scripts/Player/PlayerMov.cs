@@ -26,6 +26,7 @@ public class PlayerMov : MonoBehaviour
         jump();
     }
 
+
     public void walk()
     {
         //Aqui um ternario para setar a velocidade que sera usada, se sera a de correr ou a de andar normal 
@@ -50,10 +51,11 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
-    public void squat()
+   public void squat()
     {
 
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Chao"))
