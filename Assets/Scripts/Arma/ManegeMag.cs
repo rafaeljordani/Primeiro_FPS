@@ -20,8 +20,7 @@ public class ManegeMag : MonoBehaviour
     void Start()
     {
         weapon = GetComponent<ManagerWeapons>().armaAtual;
-        magSize = weapon.magSize;
-        ammunition = weapon.magSize;
+        
     }
 
     // Update is called once per frame

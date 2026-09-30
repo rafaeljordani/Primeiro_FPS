@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PlayerMov : MonoBehaviour
 {
-    public float walkSpeed = 3f;
-    public float runSpeed = 5f;
-    public float jumpforce = 3f;
+    public float walkSpeed;
+    public float runSpeed;
+    public float jumpforce;
     public Rigidbody rb;
     public bool ChaoTa;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +23,6 @@ public class PlayerMov : MonoBehaviour
     public void movPlayer()
     {
         walk();
-        jump();
     }
 
 
@@ -43,32 +42,13 @@ public class PlayerMov : MonoBehaviour
 
     }
 
-    public void jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && (ChaoTa == true))
-        {
-            rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
-        }
-    }
+   
 
    public void squat()
     {
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Chao"))
-        {
-            ChaoTa = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Chao"))
-        {
-            ChaoTa = false;
-        }
-    }
+    
 
 }
