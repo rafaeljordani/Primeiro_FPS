@@ -20,7 +20,7 @@ public class MainBalaInimigo : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player atingido!");
-            collision.gameObject.GetComponent<PlayerInteracao>().Vida -= 10;
+            //collision.gameObject.GetComponent<PlayerInteracao>().Vida -= 10;
         }
     }
 }

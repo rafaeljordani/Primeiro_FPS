@@ -1,48 +1,14 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class AtirarCreater : MonoBehaviour
 {
-    public float alcance = 100f;
-    public Camera cam;
-    public Transform pontaDaArma;
-
-    public GameObject PrefabsRatroTiro;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {       
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void createRastroTiro(GameObject prefbTiro, Vector3 PontoIncial, Vector3 pontoFinal)
     {
-        if (Input.GetMouseButtonDown(0)) { AtirarRaycast(); }
-    }
-
-    public void AtirarRaycast()
-    {
-        Vector3 pontoFinal;
-        RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, alcance))
-        {
-            pontoFinal = hit.point;
-            Debug.Log("Acertou o objeto: " + hit.collider.name);
-        }
-        else
-        {
-            pontoFinal = cam.transform.position + cam.transform.forward * alcance;
-            Debug.Log("Não acertou nenhum objeto");
-        }
-
-        createRastroTiro(pontaDaArma.position, pontoFinal);
-    }
-
-
-    public void createRastroTiro( Vector3 PontoIncial, Vector3 pontoFinal)
-    {
-        GameObject rastroObjeto = Instantiate(PrefabsRatroTiro, PontoIncial, Quaternion.identity);
+        GameObject rastroObjeto = Instantiate(prefbTiro, PontoIncial, Quaternion.identity);
 
         // Pega o componente de linha dele
-        LineRenderer linha = rastroObjeto.GetComponent<LineRenderer>();
+        LineRenderer linha = FindAnyObjectByType<LineRenderer>();
 
         if (linha != null)
         {
@@ -51,7 +17,7 @@ public class AtirarCreater : MonoBehaviour
             linha.SetPosition(1, pontoFinal);
         }
 
-        // Destrói o rastro após 0.1 segundos para não encher o jogo de lixo
+        // Destrï¿½i o rastro apï¿½s 0.1 segundos para nï¿½o encher o jogo de lixo
         Destroy(rastroObjeto, 0.1f);
     }
 }
