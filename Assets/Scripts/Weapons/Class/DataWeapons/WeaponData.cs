@@ -26,9 +26,9 @@ public class WeaponsData
         this.typeWeapon = typeWeapon;
     }
 
-    public virtual void fire(AtirarCreater atirarCreater, GameObject player, GameObject prefbTiro, Transform creatPoint)
+    public virtual void fire(AtirarCreater atirarCreater, GameObject player, GameObject prefbTiro, Transform creatPoint, MainPoints mainPoints)
     {
-        player.GetComponent<RayCast>().fireRaycast(atirarCreater, prefbTiro, player, creatPoint, damage, range);
+        player.GetComponent<RayCast>().fireRaycast(atirarCreater, prefbTiro, player, creatPoint, mainPoints, damage, range);
     }
 
 

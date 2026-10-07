@@ -18,7 +18,7 @@ public class AtirarCreater : MonoBehaviour
         }
 
         // Destr�i o rastro ap�s 0.1 segundos para n�o encher o jogo de lixo
-        Destroy(rastroObjeto, 0.1f);
+        Destroy(rastroObjeto, 0.03f);
     }
 }
 

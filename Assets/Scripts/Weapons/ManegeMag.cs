@@ -9,6 +9,9 @@ public class ManegeMag : MonoBehaviour
     public Transform creatPoint;
     public AtirarCreater atirarCreater;
 
+    //Referencias Points    
+    public MainPoints mainPoints;
+
     public LoadedWeaponsData weapon;
 
     public int ammunition;
@@ -27,14 +30,14 @@ public class ManegeMag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammunitionManager();
+        fireAndAmmunitionManager();
         reloadMag();
     }
 
-    public void ammunitionManager()
+    public void fireAndAmmunitionManager()
     {
         if (Input.GetMouseButton(0) && ammunition > 0 && Time.time >= nextFireTime ){
-            weapon.fire(atirarCreater, player, prefbTiro, creatPoint);
+            weapon.fire(atirarCreater, player, prefbTiro, creatPoint, mainPoints);
             ammunition--;
             print("Ammunition: " + weapon.ammunition + " | MagSize: " + ammunition);
 
