@@ -22,11 +22,15 @@ public class ManegeMag : MonoBehaviour
 
     void Start()
     {
+        setWeapon();
+    }
+    public void setWeapon()
+    {
         weapon = GetComponent<ManagerWeapons>().armaAtual;
         magSize = weapon.magSize;
         ammunition = weapon.magSize;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -39,7 +43,7 @@ public class ManegeMag : MonoBehaviour
         if (Input.GetMouseButton(0) && ammunition > 0 && Time.time >= nextFireTime ){
             weapon.fire(atirarCreater, player, prefbTiro, creatPoint, mainPoints);
             ammunition--;
-            print("Ammunition: " + weapon.ammunition + " | MagSize: " + ammunition);
+            //print("Ammunition: " + weapon.ammunition + " | MagSize: " + ammunition);
 
             //Para espaçar o tempo entre os tiros
             nextFireTime = Time.time + weapon.fireRate;

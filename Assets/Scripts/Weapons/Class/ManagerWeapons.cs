@@ -6,7 +6,8 @@ using UnityEditor;
 public class ManagerWeapons : MonoBehaviour
 {
     //Referencias armas
-    public LoadedWeapons sla;
+    [SerializeField]
+    private LoadedWeapons sla;
 
     //Referencia dicioario
     public Dictionary<int, LoadedWeaponsData> weapons;
@@ -16,6 +17,10 @@ public class ManagerWeapons : MonoBehaviour
     void Awake()
     {
 
+
+    }
+    void Start()
+    {
         weapons = new Dictionary<int, LoadedWeaponsData>
         {
             {1, sla.ak47},
@@ -25,6 +30,7 @@ public class ManagerWeapons : MonoBehaviour
         };
 
         armaAtual = weapons[4];
-
     }
+
+   
 }

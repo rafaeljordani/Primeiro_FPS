@@ -2296,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337e0910ff0f347ee8b90cee15574122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManagerWeapons
-  sla: {fileID: 1714996915}
+  sla: {fileID: 1714996917}
 --- !u!114 &1373367828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,8 +3107,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1714996914}
   - component: {fileID: 1714996913}
-  - component: {fileID: 1714996915}
   - component: {fileID: 1714996916}
+  - component: {fileID: 1714996917}
   m_Layer: 0
   m_Name: Referencys
   m_TagString: Untagged
@@ -3143,18 +3143,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1714996915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714996912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853acd24e83f2410fa242d79cb3a4900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoadedWeapons
 --- !u!114 &1714996916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3168,6 +3156,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainPoints
   points: 0
+--- !u!114 &1714996917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714996912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853acd24e83f2410fa242d79cb3a4900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadedWeapons
 --- !u!65 &1793331996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3344,6 +3344,10 @@ MonoBehaviour:
   spawner: {fileID: 2010917603}
   inimigo: {fileID: 7736994964492674149, guid: 69f6faefd5c59fd4197356b49984e017, type: 3}
   numSpawn: 10
+  life: 100
+  pointsToNextWave: 0
+  wave: 0
+  mainPoints: {fileID: 1714996916}
 --- !u!4 &2010917605
 Transform:
   m_ObjectHideFlags: 0
@@ -7131,6 +7135,6 @@ SceneRoots:
   - {fileID: 707126895}
   - {fileID: 1373367825}
   - {fileID: 1714996914}
-  - {fileID: 543450652358742575}
-  - {fileID: 1794513341}
   - {fileID: 2010917605}
+  - {fileID: 1794513341}
+  - {fileID: 543450652358742575}
