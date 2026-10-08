@@ -16,6 +16,7 @@ public class ManegeMag : MonoBehaviour
 
     public int ammunition;
     public int magSize;
+    public int ammunitionTotal;
 
 
     private float nextFireTime = 0f;
@@ -29,6 +30,7 @@ public class ManegeMag : MonoBehaviour
         weapon = GetComponent<ManagerWeapons>().armaAtual;
         magSize = weapon.magSize;
         ammunition = weapon.magSize;
+        ammunitionTotal = weapon.ammunition;
     }
     
     // Update is called once per frame
@@ -41,9 +43,10 @@ public class ManegeMag : MonoBehaviour
     public void fireAndAmmunitionManager()
     {
         if (Input.GetMouseButton(0) && ammunition > 0 && Time.time >= nextFireTime ){
+            Debug.Log(weapon.ammunition);
             weapon.fire(atirarCreater, player, prefbTiro, creatPoint, mainPoints);
             ammunition--;
-            //print("Ammunition: " + weapon.ammunition + " | MagSize: " + ammunition);
+            Debug.Log("Ammunition: " + weapon.ammunition + " | MagSize: " + ammunition);
 
             //Para espaçar o tempo entre os tiros
             nextFireTime = Time.time + weapon.fireRate;
@@ -52,11 +55,17 @@ public class ManegeMag : MonoBehaviour
 
     public void reloadMag()
     {
-        if (Input.GetKeyDown(KeyCode.R) && weapon.ammunition > 0)
+
+        if(ammunition == weapon.magSize)
+        {
+            Debug.Log("Mag cheio");
+            return;
+        }
+        else if (Input.GetKeyDown(KeyCode.R) && weapon.ammunition > 0)
         {
             Debug.Log("recaregou...");
             ammunition = magSize;
-            weapon.ammunition -= magSize;
+            ammunitionTotal = weapon.ammunition -= magSize;
         }
     }
 }
