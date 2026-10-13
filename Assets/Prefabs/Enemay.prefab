@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380097860040530306}
   - component: {fileID: 6579833008613099293}
+  - component: {fileID: 704556261392232326}
   m_Layer: 0
   m_Name: spawners_Inimigo
   m_TagString: Untagged
@@ -44,11 +45,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78461d19902f2ff4e9de07a45d44e235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InimigoAtira
-  BalaPrefab: {fileID: 4840623267421416679, guid: 1eeb8b9b53058124492ca9cdda90c0a6, type: 3}
-  localBala: {fileID: 2827795196624995632}
+  enemayBullet: {fileID: 243972400588834365, guid: cba9450b08afa614e85a2f32576b319e, type: 3}
+  locationFire: {fileID: 2827795196624995632}
+  player: {fileID: 3813080228309209636, guid: 113f9e58f7218b044b0b4f943a5a7901, type: 3}
   VelBala: 50
   TempoMax: 5
   TempoMin: 1
+--- !u!114 &704556261392232326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827795196624995632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a4031832a68ec4baef2eb08c7ee545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AtirarCreater
 --- !u!1 &7736994964492674149
 GameObject:
   m_ObjectHideFlags: 0

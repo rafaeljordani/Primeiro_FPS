@@ -19,12 +19,6 @@ public class RayCast : MonoBehaviour
 
             coliderEnnemy(hit, mainPoints);
             // Verifica se o objeto atingido tem é um inimigo e destroi ele e adiciona pontos ao player  
-
-            if (hit.collider.TryGetComponent<PlayerHelth>(out PlayerHelth emyLife))
-            {
-                serverRequestHitLife(emyLife, damage);
-                // para quando for multPlayer , aqui é onde você chamaria a função de request para o servidor para aplicar o dano ao inimigo atingido
-            }
         }
         else
         {

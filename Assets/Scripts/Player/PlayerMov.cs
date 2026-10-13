@@ -23,6 +23,7 @@ public class PlayerMov : MonoBehaviour
     public void movPlayer()
     {
         walk();
+        jump();
     }
 
 
@@ -41,14 +42,26 @@ public class PlayerMov : MonoBehaviour
         rb.linearVelocity = new Vector3(MovDirection.x, rb.linearVelocity.y, MovDirection.z);
 
     }
-
-   
-
-   public void squat()
+    public void jump()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space) && (ChaoTa == true))
+        {
+            rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+        }
     }
 
-    
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Chao"))
+        {
+            ChaoTa = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Chao"))
+        {
+            ChaoTa = false;
+        }
+    }
 }
