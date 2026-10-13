@@ -1,8 +1,11 @@
+using Unity.Profiling.LowLevel;
 using UnityEngine;
 
 public class HealfPlayer : MonoBehaviour
 {
-    private int lifePlayer = 100;
+    public int lifePlayer = 100;
+    public ChangeScenes ChangeScenes;
+    public MainPoints mainPoints;
 
 
 
@@ -30,8 +33,9 @@ public class HealfPlayer : MonoBehaviour
 
     public void die()
     {
-        Destroy(gameObject);
-        
+
+        PlayerPrefs.SetInt("pontosTemp", mainPoints.points);
+        ChangeScenes.ChangeScene("GameOver");
     }
 
 
