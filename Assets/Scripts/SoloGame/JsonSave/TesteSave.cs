@@ -1,28 +1,24 @@
 
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TestSave : MonoBehaviour
 {
-    public string playerName;
+    public TMP_InputField playerNameInput;
 
-
-    void Start()
+ public void saveJson()
     {
+
         SaveSystem saveSystem = new SaveSystem();
 
         LeaderboardData dados = new LeaderboardData();
 
         PlayerResult jogador = new PlayerResult();
-        jogador.playerName = playerName;
+        jogador.playerName = playerNameInput.text;
         jogador.score = PlayerPrefs.GetInt("pontosTemp");
         dados.jogadores.Add(jogador);
 
         saveSystem.Salvar(dados);
-    }
-
-
-    public void ReceberTexto(string texto)
-    {
-        playerName = texto;
     }
 }

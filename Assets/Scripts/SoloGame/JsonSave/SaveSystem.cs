@@ -16,4 +16,18 @@ public class SaveSystem
         Debug.Log(Application.persistentDataPath);
     }
 
+    public LeaderboardData Carregar()
+    {
+        if (!File.Exists(caminho))
+        {
+            return new LeaderboardData();
+        }
+
+        string json = File.ReadAllText(caminho);
+
+        LeaderboardData dados = JsonUtility.FromJson<LeaderboardData>(json);
+
+        return dados;
+    }
+
 }
