@@ -18,6 +18,8 @@ public class ManegeMag : MonoBehaviour
     public int magSize;
     public int ammunitionTotal;
 
+    public Animator anim;
+
 
     private float nextFireTime = 0f;
 
@@ -64,6 +66,9 @@ public class ManegeMag : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.R) && weapon.ammunition > 0)
         {
             Debug.Log("recaregou...");
+            
+            anim.SetBool("Reload", true);
+
             ammunition = magSize;
             ammunitionTotal = weapon.ammunition -= magSize;
         }

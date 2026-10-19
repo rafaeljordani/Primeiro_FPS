@@ -26,9 +26,6 @@ public class AtirarCreater : MonoBehaviour
     }
 
 
-    public void animSetFalse() 
-    {
-        anim.SetBool("Fire", false);
-    }
+    
 }
 
