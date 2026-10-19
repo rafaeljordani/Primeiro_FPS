@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class AtirarCreater : MonoBehaviour
 {
+
+    public Animator anim;
+
     public void createRastroTiro(GameObject prefbTiro, Vector3 PontoIncial, Vector3 pontoFinal)
     {
         GameObject rastroObjeto = Instantiate(prefbTiro, PontoIncial, Quaternion.identity);
@@ -16,9 +19,16 @@ public class AtirarCreater : MonoBehaviour
             linha.SetPosition(0, PontoIncial);
             linha.SetPosition(1, pontoFinal);
         }
-
+        anim.SetBool("Fire", true);
         // Destr�i o rastro ap�s 0.1 segundos para n�o encher o jogo de lixo
         Destroy(rastroObjeto, 0.03f);
+
+    }
+
+
+    public void animSetFalse() 
+    {
+        anim.SetBool("Fire", false);
     }
 }
 
