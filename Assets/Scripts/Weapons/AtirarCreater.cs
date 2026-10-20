@@ -1,14 +1,16 @@
+using JetBrains.Annotations;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class AtirarCreater : MonoBehaviour
 {
-
+   
     public Animator anim;
 
     public void createRastroTiro(GameObject prefbTiro, Vector3 PontoIncial, Vector3 pontoFinal)
     {
-        GameObject rastroObjeto = Instantiate(prefbTiro, PontoIncial, Quaternion.identity);
+        GameObject CameraPlayer = Camera.main.gameObject;
+        GameObject rastroObjeto = Instantiate(prefbTiro, PontoIncial, CameraPlayer.transform.rotation);
 
         // Pega o componente de linha dele
         LineRenderer linha = FindAnyObjectByType<LineRenderer>();

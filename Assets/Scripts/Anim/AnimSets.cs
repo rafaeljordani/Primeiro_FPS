@@ -12,7 +12,7 @@ public class AnimSets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Iswalk();
     }
 
     public void SetFalseFire()
@@ -22,6 +22,18 @@ public class AnimSets : MonoBehaviour
     public void SetFalseReload()
     {
         anim.SetBool("Reload", false);
+    }
+
+    public void Iswalk()
+    {
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+        }
     }
 
 }
